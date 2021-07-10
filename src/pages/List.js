@@ -5,8 +5,10 @@ import {Link} from 'react-router-dom'
 const Library = () => {
     return (
         <div>
-            <h1>My Library</h1>
+            <h1>My List</h1>
             <CardList />
+            <br />
+            <Link to="/game">Play Game</Link>
             <br />
             <Link to="/">Home</Link>
         </div>

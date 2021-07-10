@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Header from './components/Header'
 import Home from './pages/Home'
-import Library from './pages/Library'
+import Library from './pages/List'
 import Create from './pages/Create'
 import Game from './pages/Game'
 import './App.css';
