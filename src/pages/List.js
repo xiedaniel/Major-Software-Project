@@ -1,16 +1,18 @@
 import React from 'react'
 import CardList from '../components/CardList'
-import {Link} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 
 const Library = () => {
+    const history = useHistory()
+    const handleClick = (link)=> {
+        history.push(link)
+    }
+
     return (
         <div>
-            <h1>My List</h1>
+            <h1 className="mb-4">My List <Button onClick={()=>handleClick("/game")}>Revise List</Button></h1>
             <CardList />
-            <br />
-            <Link to="/game">Play Game</Link>
-            <br />
-            <Link to="/">Home</Link>
         </div>
     )
 }

@@ -1,12 +1,14 @@
 import React from 'react'
+import { Button} from 'react-bootstrap'
 
 const CardItem = (props) => {
     return (
-        <div>
-            Term: {props.card.term}
-            Definition: {props.card.def}
-            <button onClick={() => props.deleteCard(props.card.id)}>Delete</button>
-        </div>
+        <tr>
+            <td>{props.index + 1}</td>
+            <td>{props.card.term}</td>
+            <td>{props.card.def}</td>
+            <td><Button onClick={() => props.deleteCard(props.card.id)} variant="outline-danger">Delete</Button></td>         
+        </tr>
     )
 }
 
