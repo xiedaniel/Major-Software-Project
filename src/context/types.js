@@ -3,3 +3,7 @@ export const DELETE_LIST = "DELETE_LIST";
 export const ADD_CARD = "ADD_CARD";
 export const DELETE_CARD = "DELETE_CARD";
 export const SET_CARDS = 'SET_CARDS';
+export const SET_LIBRARY = 'SET_LIBRARY';
+export const ADD_LIST_TO_LIBRARY = 'ADD_LIST_TO_LIBRARY';
+export const SET_CURRENT_LIST = 'SET_CURRENT_LIST';
+export const SET_LOADING = 'SET_LOADING'

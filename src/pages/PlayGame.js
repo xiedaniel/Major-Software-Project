@@ -24,8 +24,8 @@ const PlayGame = (props) => {
 
     return ( questions && questions.length > 0 ? (
         <div>
-            <p>Score: {score} / {result === null ? questionNo : questionNo + 1}</p>
-            <p><ProgressBar now={result === null ? questionNo : questionNo + 1} max={questions.length} label={`${result === null ? questionNo : questionNo + 1}`}/></p>
+            <div>Score: {score} / {result === null ? questionNo : questionNo + 1}</div>
+            <div><ProgressBar now={result === null ? questionNo : questionNo + 1} max={questions.length} label={`${result === null ? questionNo : questionNo + 1}`}/></div>
             <br />
             {questions[questionNo].term}
             <Row className="mt-4">
@@ -60,7 +60,7 @@ const PlayGame = (props) => {
 
             {
                 (result !== null && questionNo < questions.length - 1) && 
-                    <p><Button variant="outline-primary" onClick={onNext} >Next</Button></p>
+                    <div><Button variant="outline-primary" onClick={onNext} >Next</Button></div>
             }
         </div>
         ) : '<p>Loading...</p>' ) ;

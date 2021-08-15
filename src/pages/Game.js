@@ -5,8 +5,8 @@ import PlayGame from './PlayGame'
 
 const Game = () => {
   const appContext = useContext(AppContext);
-  const { cards } = appContext;
-  const questions = getQuestions(cards)
+  const { currentListTerms } = appContext;
+  const questions = getQuestions(currentListTerms)
 
   return (
     <PlayGame questions={questions} />

@@ -3,12 +3,13 @@ import CardItem from './CardItem';
 import {Form, Row, Col, Card, Table, Button} from 'react-bootstrap'
 import AppContext from "../context/appContext"
 
-const CardList = () => {
+const CardList = (props) => {
     const [term, setTerm] = useState(''); // remember term inputted
     const [def, setDef] = useState(''); // rememeber definition inputted
 
     const appContext = useContext(AppContext);
-    const { cards, deleteCard, addCard } = appContext;
+    const { deleteCard, addCard } = appContext;
+    console.log("cards", props.cards)
 
     const delete_card = (id) => {
         console.log("DELETING ", id)
@@ -36,7 +37,7 @@ const CardList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {cards.map(
+                    {props.cards && props.cards.length > 0 && props.cards.map(
                         (card, index)=>(<CardItem card={card} deleteCard={delete_card} key={card.id} index={index} />)
                     )}
                 </tbody>

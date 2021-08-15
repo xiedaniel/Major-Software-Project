@@ -43,9 +43,9 @@ const Home = () => {
             </Accordion>
 
             <h2 className="mb-4 mt-4">Select a list to revise</h2>
-            <div className="mb-4 mt-4">
+            {/* <div className="mb-4 mt-4">
                 <Button onClick={()=>handleClick("/create")}>Create New List</Button>
-            </div>
+            </div> */}
             <div>
                 <Button onClick={()=>handleClick("/library")}>View my lists</Button>
             </div>

@@ -9,14 +9,14 @@ export const Header = () => {
                 <Navbar.Brand>Revision App</Navbar.Brand>
                 <Nav className="me-auto">
                     <Nav.Item>
-                    <Nav.Link eventKey="/home"><Link to="/">Home</Link></Nav.Link>
+                    <Nav.Link as={Link} eventKey="/home" to="/">Home</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                    <Nav.Link eventKey="/library"><Link to="/library">My Library</Link></Nav.Link>
+                    <Nav.Link as={Link} eventKey="/library" to="/library">My Library</Nav.Link>
                     </Nav.Item>
-                    <Nav.Item>
-                    <Nav.Link eventKey="/create"><Link to="/create">Create</Link></Nav.Link>
-                    </Nav.Item>
+                    {/* <Nav.Item>
+                    <Nav.Link as={Link} eventKey="/create" to="/create">Create</Nav.Link>
+                    </Nav.Item> */}
                 </Nav>
             </Container>
         </Navbar>
