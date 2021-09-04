@@ -6,11 +6,11 @@ import PlayGame from './PlayGame'
 const Game = (props) => {
   const appContext = useContext(AppContext);
   const { setCurrentList, currentListTerms } = appContext;
-  console.log('current terms', currentListTerms, props.match.params.listname)
   const [questions, setQuestions] = useState(null)
 
   useEffect(() => {
     setCurrentList(props.match.params.listname)
+    // eslint-disable-next-line
   }, [props.match.params.listname] )
 
   useEffect(() => {
