@@ -1,4 +1,4 @@
-//create a list of definitions
+// create a list of definitions
 const getDefList = (list) => {
   return list.map((item)=>{
     return item.def

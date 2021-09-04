@@ -7,7 +7,7 @@ import { Button } from 'react-bootstrap'
 const List = (props) => {
     const history = useHistory()
     const appContext = useContext(AppContext);
-    const { setCurrentList, currentListTerms } = appContext;
+    const { currentList, setCurrentList, currentListTerms, deleteList } = appContext;
 
     useEffect(() => {
         // console.log("SETTING CURRENT LIST")
@@ -19,9 +19,19 @@ const List = (props) => {
         history.push(link)
     }
 
+    const handleDeleteList = () => {
+        if (window.confirm("Are you sure you wish to delete this list?")) {
+            deleteList(currentList);
+            history.push('/library')
+        }
+    }
+
     return (
         <div>
-            <h1 className="mb-4">My List <Button onClick={()=>handleClick("/game")}>Revise List</Button></h1>
+            <h1 className="mb-4">List - {props.match.params.listname}
+            <Button onClick={()=>handleClick("/game")} style={{marginLeft: '1rem'}}>Revise List</Button>
+            <Button onClick={handleDeleteList} className="btn btn-danger" style={{marginLeft: '1rem'}}>Delete List</Button>
+            </h1>
             <CardList cards={currentListTerms}/>
         </div>
     )

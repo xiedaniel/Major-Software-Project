@@ -18,8 +18,13 @@ const appReducer = (state, action)=> {
         [action.payload]:[]
       }
     case DELETE_LIST:
+      let newLibrary = {
+        ...state.library
+      };
+      delete newLibrary[action.payload];
       return {
-
+        ...state,
+        library: newLibrary
       }
     case ADD_CARD:
       const newListTerms = [...state.currentListTerms, action.payload]

@@ -10,7 +10,8 @@ import {
   SET_LIBRARY,
   ADD_LIST_TO_LIBRARY,
   SET_CURRENT_LIST,
-  SET_LOADING
+  SET_LOADING,
+  DELETE_LIST,
 } from "./types"
 
 const AppState = (props)=> {
@@ -79,6 +80,13 @@ const AppState = (props)=> {
     })
   }
 
+  const deleteList = (listname) => {
+    dispatch({
+      type: DELETE_LIST,
+      payload: listname
+    })
+  }
+
   const setLoading = (loading) => {
     dispatch({
       type: SET_LOADING,
@@ -98,7 +106,8 @@ const AppState = (props)=> {
         setCards,
         setLibrary,
         addListToLibrary,
-        setCurrentList
+        setCurrentList,
+        deleteList
       }}
     >
       {state.loading? 'LOADING...' : (

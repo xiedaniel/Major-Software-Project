@@ -49,18 +49,20 @@ const Library = () => {
       }
       </div>
       <hr className="mt-2 mb-3"/>
-      <h2>Create a new list</h2>
+      <h2>Create a New List</h2>
       <form onSubmit={addList} className="form-horizontal">
         <div className="control-group">
           <label className="control-label" htmlFor="listname">List Name</label>
           <div className="controls">
-            <input type="text" id="listname" placeholder="List Name" onChange={onChangeTitle} value={title} required/>
+            <input type="text" id="listname" placeholder="Enter list name" onChange={onChangeTitle} value={title} required/>
           </div>
         </div>
+        <br/>
         <div className="control-group">
           <label className="control-label" htmlFor="terms">Terms</label>
+          <p>Add one term and corresponding definition separated by a colon per line, adhering to the format <strong>term:definition</strong></p>
           <div className="controls">
-            <textarea id="terms" placeholder="Add one term each line, separated by ':'" rows="10" cols="80" onChange={onChangeTerms} value={terms} required/>
+            <textarea id="terms" placeholder="Enter cards" rows="10" cols="80" onChange={onChangeTerms} value={terms} required/>
           </div>
         </div>
         <div className="control-group">
