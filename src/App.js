@@ -3,7 +3,6 @@ import Header from './components/Header'
 import Home from './pages/Home'
 import Library from './pages/Library'
 import List from './pages/List'
-import Create from './pages/Create'
 import Game from './pages/Game'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,7 +19,6 @@ function App() {
             <Route path='/' component={Home} exact={true}/>
             <Route path='/library/:listname' component={List} />
             <Route path='/library' component={Library} exact={true}/>
-            <Route path='/create' component={Create} />
             <Route path='/game/:listname' component={Game} />
           </Switch>
         </Container>
