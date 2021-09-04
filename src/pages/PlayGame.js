@@ -80,7 +80,6 @@ const PlayGame = (props) => {
                 )
                     
             }
-            {questionNo} {questions.length}
         </div>
         ) : '<p>Loading...</p>' ) ;
 }
