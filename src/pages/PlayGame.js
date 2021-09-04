@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { ProgressBar, Row, Col, Button, Alert} from 'react-bootstrap'
 
 const PlayGame = (props) => {
+    const history = useHistory();
     const [questionNo, setQuestionNo] = useState(0)
     const [result, setResult] = useState(null)
     const [score, setScore] = useState(0)
@@ -21,6 +23,13 @@ const PlayGame = (props) => {
         setResult(null)
     }
 
+    const onGoToLibrary = () => {
+        history.push('/library')
+    }
+
+    const onPlayAgain = () => {
+        window.location.reload(false);
+    }
 
     return ( questions && questions.length > 0 ? (
         <div>
@@ -62,6 +71,16 @@ const PlayGame = (props) => {
                 (result !== null && questionNo < questions.length - 1) && 
                     <div><Button variant="outline-primary" onClick={onNext} >Next</Button></div>
             }
+            {
+                (result !== null && questionNo === questions.length - 1) && (
+                    <>
+                    <div><Button variant="outline-secondary" onClick={onPlayAgain} >Play again</Button>
+                    <Button variant="outline-primary" onClick={onGoToLibrary} style={{marginLeft: '1rem'}}>Go to Library</Button></div>
+                    </>
+                )
+                    
+            }
+            {questionNo} {questions.length}
         </div>
         ) : '<p>Loading...</p>' ) ;
 }

@@ -40,9 +40,9 @@ const Library = () => {
 
   return (
     <div>
-      <h1>My Library ({Object.entries(library).length})</h1>
+      <h1>My Library ({library ? Object.entries(library).length : 0})</h1>
       <div className="list-group">
-      {Object.keys(library).map(key => 
+      {library && Object.keys(library).map(key => 
         <Link to={"/library/" + key} className="list-group-item" key={key}>
           <div className="fs-2">{key} <div className="badge bg-success float-right">{library[key].length} Terms</div></div>
         </Link>)

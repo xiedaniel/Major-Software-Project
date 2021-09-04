@@ -10,7 +10,7 @@ const List = (props) => {
     const { currentList, setCurrentList, currentListTerms, deleteList } = appContext;
 
     useEffect(() => {
-        // console.log("SETTING CURRENT LIST")
+        console.log("SETTING CURRENT LIST", props.match.params.listname)
         setCurrentList(props.match.params.listname)
     // eslint-disable-next-line
     }, [props.match.params.listname])
@@ -29,7 +29,7 @@ const List = (props) => {
     return (
         <div>
             <h1 className="mb-4">List - {props.match.params.listname}
-            <Button onClick={()=>handleClick("/game")} style={{marginLeft: '1rem'}}>Revise List</Button>
+            <Button onClick={()=>handleClick("/game/" + currentList)} style={{marginLeft: '1rem'}}>Revise List</Button>
             <Button onClick={handleDeleteList} className="btn btn-danger" style={{marginLeft: '1rem'}}>Delete List</Button>
             </h1>
             <CardList cards={currentListTerms}/>

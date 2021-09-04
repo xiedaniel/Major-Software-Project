@@ -21,7 +21,7 @@ function App() {
             <Route path='/library/:listname' component={List} />
             <Route path='/library' component={Library} exact={true}/>
             <Route path='/create' component={Create} />
-            <Route path='/game' component={Game} />
+            <Route path='/game/:listname' component={Game} />
           </Switch>
         </Container>
       </BrowserRouter>

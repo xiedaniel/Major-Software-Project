@@ -13,11 +13,16 @@ const list = [
   { term: 'term10', def: 'def10' },
 ]
 
-
+// Test cases for the functions in the util test suite
 test('Should generate the list of questions', () => {
   const questions = getQuestions(list);
   console.log(questions);
+  // Check the length of question is the same as the length of list
   expect(questions.length).toBe(list.length);
+
+  // Check the returned number of choices is 4
   expect(questions[0].choices.length).toBe(4);
+
+  // And at least one of the choices is the correct answer
   expect(questions[0].choices).toContain(questions[0].def)
 })
