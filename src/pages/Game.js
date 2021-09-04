@@ -11,7 +11,7 @@ const Game = (props) => {
   useEffect(() => {
     setCurrentList(props.match.params.listname)
     // eslint-disable-next-line
-  }, [props.match.params.listname] )
+  }, [props.match.params.listname, setCurrentList] )
 
   useEffect(() => {
     if (currentListTerms) {
